@@ -76,7 +76,6 @@ public class QuizActivity extends Activity {
   }
 
   private void updateQuestion() {
-    if(mCurrentIndex == -1) { alertError(); }
     int question = mQuestionBank[mCurrentIndex].getQuestion();
     mQuestionTextView.setText(question);
   }
@@ -89,21 +88,12 @@ public class QuizActivity extends Activity {
   }
 
   private void checkAnswer(boolean userPressedTrue) {
-    if(mCurrentIndex == -1) { alertError(); }
     boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
 
-    int messageResId;
-
-    if(userPressedTrue == answerIsTrue) {
-      messageResId = R.string.correct_toast;
-    } else {
-      messageResId = R.string.incorrect_toast;
-    }
+    int messageResId = (userPressedTrue == answerIsTrue) ?
+            R.string.correct_toast :
+            R.string.incorrect_toast;
 
     Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
-  }
-
-  private void alertError() {
-    Toast.makeText(this, R.string.error_message, Toast.LENGTH_SHORT).show();
   }
 }
