@@ -10,6 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends Activity {
+
+  private static final String KEY_INDEX = "index";
+
   private Button mTrueButton;
   private Button mFalseButton;
   private ImageButton mNextButton;
@@ -17,11 +20,11 @@ public class QuizActivity extends Activity {
   private TextView mQuestionTextView;
   private int mCurrentIndex = 0;
   private TrueFalse[] mQuestionBank = new TrueFalse[] {
+          new TrueFalse(R.string.question_oceans, true),
+          new TrueFalse(R.string.question_mideast, false),
           new TrueFalse(R.string.question_africa, true),
           new TrueFalse(R.string.question_americas, false),
-          new TrueFalse(R.string.question_asia, true),
-          new TrueFalse(R.string.question_mideast, false),
-          new TrueFalse(R.string.question_oceans, true)
+          new TrueFalse(R.string.question_asia, true)
   };
 
   @Override
@@ -32,6 +35,11 @@ public class QuizActivity extends Activity {
     mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
     mTrueButton = (Button) findViewById(R.id.true_button);
     mFalseButton = (Button) findViewById(R.id.false_button);
+
+    if(savedInstanceState != null) {
+      mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+    }
+
     updateQuestion();
 
     mQuestionTextView.setOnClickListener(new View.OnClickListener() {
@@ -71,9 +79,16 @@ public class QuizActivity extends Activity {
         mCurrentIndex = (mCurrentIndex == 0 ? mQuestionBank.length :  mCurrentIndex) - 1;
         updateQuestion();
       }
-    }
-    );
+    });
   }
+
+  @Override
+  public void onSaveInstanceState(Bundle savedInstanceState) {
+    super.onSaveInstanceState(savedInstanceState);
+
+    savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+  }
+
 
   private void updateQuestion() {
     int question = mQuestionBank[mCurrentIndex].getQuestion();
