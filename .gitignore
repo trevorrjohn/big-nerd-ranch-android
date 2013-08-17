@@ -1,0 +1,9 @@
+./one/GeoQuiz/build/*
+./one/.gradle/*
+./one/.idea
+./*/build
+./*/target
+./*/test_servers
+./*/.idea/workspace.xml
+./*/.idea/tasks.xml
+./*/*.apk
