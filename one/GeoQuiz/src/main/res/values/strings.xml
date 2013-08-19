@@ -7,7 +7,10 @@
   <string name="true_button">True</string>
   <string name="correct_toast">Correct!</string>
   <string name="incorrect_toast">Incorrect!</string>
-  <string name="error_message">Index is -1</string>
+  <string name="cheat_button">Cheat!</string>
+  <string name="warning_text">Are you sure you want to do this?</string>
+  <string name="show_answer_button">Show Answer</string>
+  <string name="judgment_toast">Cheating is wrong</string>
 
   <!-- Questions  -->
   <string name="question_oceans">1) The Pacific Ocean is larger than the Atlantic Ocean.</string>

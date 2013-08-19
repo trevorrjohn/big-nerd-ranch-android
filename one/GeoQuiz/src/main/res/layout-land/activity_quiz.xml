@@ -1,6 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" >
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" >
 
   <TextView android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
@@ -25,18 +25,24 @@
 
   </LinearLayout>
 
-    <ImageButton android:id="@+id/previous_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|left"
-            android:padding="5dp"
-            android:src="@drawable/arrow_left" />
+  <Button android:id="@+id/cheat_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom|center"
+          android:text="@string/cheat_button" />
 
-    <ImageButton android:id="@+id/next_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
-            android:padding="5dp"
-            android:src="@drawable/arrow_right" />
+  <ImageButton android:id="@+id/previous_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="bottom|left"
+               android:padding="5dp"
+               android:src="@drawable/arrow_left" />
+
+  <ImageButton android:id="@+id/next_button"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="bottom|right"
+               android:padding="5dp"
+               android:src="@drawable/arrow_right" />
 
 </FrameLayout>
